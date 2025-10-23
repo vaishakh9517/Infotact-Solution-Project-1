@@ -15,7 +15,6 @@ print(df.head())
 print(df["order_date"].dtype)
 df['order_date'] = pd.to_datetime(df['order_date'], errors='coerce')
 print(df["order_date"].dtype)
-df['order_date'] = df['order_date'].dt.strftime('%m/%d/%Y')
 
 print("Missing values per column :")
 print(df.isnull().sum())
