@@ -15,6 +15,7 @@ print(df.head())
 print(df["order_date"].dtype)
 df['order_date'] = pd.to_datetime(df['order_date'], errors='coerce')
 print(df["order_date"].dtype)
+df['order_date'] = df['order_date'].dt.strftime('%m/%d/%Y')
 
 print("Missing values per column :")
 print(df.isnull().sum())
@@ -27,8 +28,6 @@ print("Total Duplicate Customer IDs : ", duplicate_customer)
 duplicate_product= df['product_id'].duplicated().sum()
 print("Total Duplicate Product IDs : ", duplicate_product)
 #Not removing duplicates as customers and products could be repeated
-
-df['sales'] = (df['quantity'] * df['unit_price'])
 
 #Checking the data type
 print("Data types : ", df.dtypes)
