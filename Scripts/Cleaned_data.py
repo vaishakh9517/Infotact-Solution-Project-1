@@ -20,6 +20,8 @@ df['order_date'] = df['order_date'].dt.strftime('%m/%d/%Y')
 print("Missing values per column :")
 print(df.isnull().sum())
 
+df['sales'] = df['quantity'] * df['unit_price']
+
 df.columns = df.columns.str.strip().str.lower().str.replace(' ', '_')
 print(df.head())
 
