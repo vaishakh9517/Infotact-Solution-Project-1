@@ -38,5 +38,5 @@ output_path = 'data/cleaned/Aster Retail Holdings Cleaned.csv'
 df.to_csv(output_path, index= False)
 print("\n✅ Data cleaned and saved successfully to:", output_path)
 
-output_path = 'Pivot.xlsx'
+output_path = 'data/cleaned/Aster Retail Holdings Pivot.xlsx'
 df.to_excel(output_path, index= False)
