@@ -10,6 +10,19 @@ print("Shape of the file = ", df.shape)
 print("First 5 rows", )
 print(df.head())
 
+# Define correct mapping of products to categories
+mapping = {
+    "Clothing": ["Jacket", "T-shirt", "Shoes"],
+    "Accessories": ["Sunglasses", "Watch", "Headphones"],
+    "Electronics": ["Tablet", "Smartphone", "Camera", "Laptop"]
+}
+
+# Create a reverse mapping (product -> category)
+reverse_mapping = {product: category for category, products in mapping.items() for product in products}
+
+# Apply correct category
+df["Correct_Category"] = df["product_name"].map(reverse_mapping)
+
 
 #Cleaning
 print(df["order_date"].dtype)
