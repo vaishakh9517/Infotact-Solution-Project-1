@@ -21,8 +21,13 @@ mapping = {
 reverse_mapping = {product: category for category, products in mapping.items() for product in products}
 
 # Apply correct category
-df["Correct_Category"] = df["product_name"].map(reverse_mapping)
+df["correct_category"] = df["product_name"].map(reverse_mapping)
 
+# Replacing the old 'Category' column with the corrected values
+df["category"] = df["correct_category"]
+
+# Removing the extra column now
+df = df.drop(columns=["correct_category"])
 
 #Cleaning
 print(df["order_date"].dtype)
