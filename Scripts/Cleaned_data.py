@@ -46,6 +46,8 @@ duplicate_customer= df['customer_id'].duplicated().sum()
 print("Total Duplicate Customer IDs : ", duplicate_customer)
 duplicate_product= df['product_id'].duplicated().sum()
 print("Total Duplicate Product IDs : ", duplicate_product)
+duplicate_order= df['order_id'].duplicated().sum()
+print("Total Duplicate Order IDs : ", duplicate_order)
 #Not removing duplicates as customers and products could be repeated
 
 #Checking the data type
