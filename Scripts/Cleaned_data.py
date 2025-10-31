@@ -54,7 +54,7 @@ print("Data types : ", df.dtypes)
 #Saving the cleaned data
 output_path = 'data/cleaned/Aster Retail Holdings Cleaned.csv'
 df.to_csv(output_path, index= False)
-print("\n✅ Data cleaned and saved successfully to:", output_path)
+print("\nData cleaned and saved successfully to:", output_path)
 
 output_path = 'data/cleaned/Aster Retail Holdings (Excel).xlsx'
 df.to_excel(output_path, index= False)
